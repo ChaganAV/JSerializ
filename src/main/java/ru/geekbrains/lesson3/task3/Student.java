@@ -1,6 +1,8 @@
 package ru.geekbrains.lesson3.task3;
 
-public class Student {
+import java.io.Serializable;
+
+public class Student implements Serializable {
     private String name;
     private int age;
     private transient double GPA;
@@ -14,6 +16,15 @@ public class Student {
         this.GPA = GPA;
     }
 
+    @Override
+    public String toString() {
+        return "Student{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                ", GPA=" + GPA +
+                '}';
+    }
+    // region getters
     public String getName() {
         return name;
     }
@@ -37,4 +48,5 @@ public class Student {
     public void setGPA(double GPA) {
         this.GPA = GPA;
     }
+    // endregion
 }
