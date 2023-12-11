@@ -16,12 +16,18 @@ public class Program {
         StudentList.saveToFile("Students.json",students);
         StudentList.saveToFile("Students.xml",students);
         System.out.println("Сериализовали");
-        System.out.println("=============");
 
-        List<Student> studentsNew = StudentList.loadFromFile("students.json");
-        //studentsNew.forEach(s -> System.out.println(s));
-        for (Student student: studentsNew) {
+        System.out.println("====json====");
+        List<Student> studentsJson = StudentList.loadFromFile("students.json");
+        studentsJson.forEach(s -> System.out.println(s));
+
+        System.out.println("====bin==== GPA не сериализуется (transient)");
+        List<Student> studentsBin = StudentList.loadFromFile("students.bin");
+        for (Student student: studentsBin) {
             System.out.println(student);
         }
+        System.out.println("====xml====");
+        List<Student> studentsXml = StudentList.loadFromFile("students.xml");
+        studentsXml.forEach(s -> System.out.println(s));
     }
 }

@@ -9,7 +9,6 @@ import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 public class StudentList {
     public static final String FILE_JSON = "students.json";
